@@ -12,6 +12,7 @@ export class BoardComponent implements OnInit {
   square = [];
   isX = true;
   winner=null;
+  clickCount = 0
 
   // this will call the newGame fuctions to Intiazlie
   // the game board.
@@ -25,6 +26,7 @@ export class BoardComponent implements OnInit {
     this.isX = true;
     this.winner = null;
     console.log("new game trigged");
+    this.clickCount=0;
   }
 
   // Will return the current player playing
@@ -34,15 +36,28 @@ export class BoardComponent implements OnInit {
 
   // This will keep track of the event clicks
   eventReg(pos){
-    if(!this.square[pos]){
+    if(!this.square[pos] && !this.winner){
+      ++this.clickCount;
       this.square[pos]=this.whichPlayer();
-      this.checkWinner(this.whichPlayer());
+      console.log("square array : ",this.square)
+      if(this.clickCount>4)
+        this.checkWinner(this.whichPlayer());
       this.isX = !this.isX;
     }
   }
 
+  // this will check the winner of game. ( program Logic )
   checkWinner(value){
-    
+    let sucess = 
+    [ 
+      [0,1,2],[3,4,5],[6,7,8],[0,4,8],
+      [0,3,6],[1,4,7],[2,5,8],[6,4,2]
+    ]
+    for(let i=0;i<sucess.length;++i){
+      let [a,b,c] = sucess[i];
+      if(this.square[a]== value && this.square[b]==value && this.square[c]==value)
+        this.winner = value;
+    }
   }
 
 }
