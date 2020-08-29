@@ -1,0 +1,11 @@
+<h3><strong>{{ whichPlayer() }}'s turn</strong></h3>
+<button (click)="newGame()">New Game</button>
+
+<h2 *ngIf="winner">{{this.winner}} is the winner</h2>
+
+<main>
+    <app-square *ngFor="let val of square; let i = index" 
+    [value]="val"
+    (click)="eventReg(i)">
+    </app-square>
+</main>
