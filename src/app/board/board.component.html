@@ -1,11 +1,18 @@
-<h3><strong>{{ whichPlayer() }}'s turn</strong></h3>
-<button (click)="newGame()">New Game</button>
 
-<h2 *ngIf="winner">{{this.winner}} is the winner</h2>
+<h3 *ngIf="!winner && clickCount<9"><strong> Player {{ whichPlayer() }}'s turn</strong></h3>
+<h2 *ngIf="winner">{{winner}} is the winner</h2>
+<h2 *ngIf="clickCount==9 && !winner">Games a draw</h2>
 
+<button nbButton outline status="warning" (click)="newGame()">
+    New Game
+</button>
+
+
+<div>
 <main>
     <app-square *ngFor="let val of square; let i = index" 
     [value]="val"
     (click)="eventReg(i)">
     </app-square>
 </main>
+</div>

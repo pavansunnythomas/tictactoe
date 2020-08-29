@@ -1,5 +1,21 @@
-<h1 style="align-self: center;">TIC TAC TOE GAME</h1>
+<nb-layout>
 
-<app-board></app-board>
+  <nb-layout-header>
+  <!-- Insert header here -->
+  <h1 style="position:relative ;margin-left: 41%;">TIC TAC TOE GAME</h1>
+  </nb-layout-header>
 
-<router-outlet></router-outlet>
+  <nb-layout-column>
+
+    
+    <app-board></app-board>
+    
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  <h6>Author : Pavan Sunny Thomas</h6>
+  </nb-layout-footer>
+
+</nb-layout>

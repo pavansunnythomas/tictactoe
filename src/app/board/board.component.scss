@@ -1,9 +1,19 @@
 main{
     display: grid;
     grid-template-columns: 200px 200px 200px;
+    text-align: center;
+    align-content: center;
 }
 
 app-square{
     border: 1px grey solid;
     height: 200px;
+}
+div{
+    position: relative;
+    margin-top: 1%;
+    margin-bottom: auto;
+    margin-right: 33.3333%;
+    margin-left: 33.333%;
+    
 }
