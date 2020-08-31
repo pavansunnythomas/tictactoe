@@ -22,7 +22,7 @@ export class BoardComponent implements OnInit {
 
   // This will set all the intial values of setup.
   newGame(){
-    for(let i=0; i<9; ++i) this.square[i] = null
+    for(let i=0; i<9; ++i) this.square[i] = null;
     this.isX = true;
     this.winner = null;
     this.clickCount=0;
