@@ -25,7 +25,6 @@ export class BoardComponent implements OnInit {
     for(let i=0; i<9; ++i) this.square[i] = null
     this.isX = true;
     this.winner = null;
-    console.log("new game trigged");
     this.clickCount=0;
   }
 
@@ -39,7 +38,6 @@ export class BoardComponent implements OnInit {
     if(!this.square[pos] && !this.winner){
       ++this.clickCount;
       this.square[pos]=this.whichPlayer();
-      console.log("square array : ",this.square)
       if(this.clickCount>4)
         this.checkWinner(this.whichPlayer());
       this.isX = !this.isX;

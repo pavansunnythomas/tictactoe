@@ -11,5 +11,5 @@ import { Component, Input } from '@angular/core';
 export class SquareComponent {
 
   constructor() { }
-    @Input() value: "X" | "O";
+    @Input() value: string;
 }
